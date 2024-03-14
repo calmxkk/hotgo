@@ -19,6 +19,9 @@ SET time_zone = "+00:00";
 --
 -- Database: `hotgo`
 --
+DROP DATABASE IF EXISTS hotgo;
+create database hotgo;
+use hotgo;
 
 -- --------------------------------------------------------
 
