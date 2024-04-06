@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    # restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: '123456'  # 设置 MySQL root 用户的默认密码为 123456
+    ports:
+      - '3306:3306'  # 映射 MySQL 的 3306 端口到主机的 3306 端口
+    volumes:
+      - mysql_data:/var/lib/mysql  # 将 MySQL 数据目录挂载到主机上，以保持数据持久化
+
+  redis:
+    image: redis:latest
+    # restart: always
+    ports:
+      - '6379:6379'  # 映射 Redis 的 6379 端口到主机的 6379 端口
+
+volumes:
+  mysql_data:
